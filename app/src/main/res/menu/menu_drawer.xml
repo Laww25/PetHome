@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/itInicio"
+            android:title="Inicio"
+            android:icon="@drawable/ic_home"/>
+
+        <item
+            android:id="@+id/itMascotas"
+            android:title="Mis Mascotas"
+            android:icon="@drawable/huella"/>
+
+        <item
+            android:id="@+id/itHistorial"
+            android:title="Historial"
+            android:icon="@drawable/ic_historial"/>
+
+        <item
+            android:id="@+id/itSeguimiento"
+            android:title="Seguimiento"
+            android:icon="@drawable/ic_seguimiento"/>
+
+        <item
+            android:id="@+id/itPerfil"
+            android:title="Perfil"
+            android:icon="@drawable/ic_perfil"/>
+
+        <item
+            android:id="@+id/itCerrarSesion"
+            android:title="Cerrar sesión"
+            android:icon="@drawable/ic_cerrar" />
+
+    </group>
+
+</menu>
