@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:orientation="vertical"
+    android:background="#F7F5FF"
+    android:padding="20dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Historial (Fragment)"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:text="Historial de mascotas"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333A4E"
+        android:layout_marginBottom="16dp"/>
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistorial"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- TOTAL -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="14dp"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total registradas"
+            android:textSize="11sp"
+            android:textColor="#888780"/>
+        <TextView
+            android:id="@+id/tvTotalMascotas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 mascotas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#534AB7"/>
+
+    </LinearLayout>
+
+</LinearLayout>

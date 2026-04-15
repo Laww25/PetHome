@@ -3,6 +3,8 @@ package com.example.pethome
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -23,6 +25,9 @@ class RegistroActivity : AppCompatActivity() {
     private lateinit var btnGuardar: Button
     private lateinit var btnVolver: Button
 
+    private lateinit var cbTerminos: CheckBox
+    private lateinit var tvLinkTerminos: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
@@ -40,6 +45,14 @@ class RegistroActivity : AppCompatActivity() {
 
         btnGuardar = findViewById(R.id.btnGuardar)
         btnVolver = findViewById(R.id.btnVolver)
+
+        cbTerminos = findViewById(R.id.cbTerminos)
+        tvLinkTerminos = findViewById(R.id.tvLinkTerminos)
+
+        tvLinkTerminos.paintFlags = tvLinkTerminos.paintFlags or android.graphics.Paint.UNDERLINE_TEXT_FLAG
+        tvLinkTerminos.setOnClickListener {
+            mostrarTerminos()
+        }
 
         btnVolver.setOnClickListener {
             finish()
@@ -59,6 +72,12 @@ class RegistroActivity : AppCompatActivity() {
         val pass = etPassword.text?.toString()?.trim() ?: ""
 
         // Validaciones rápidas
+
+        if(!cbTerminos.isChecked) {
+            Toast.makeText(this, "Debes aceptar los terminos y condiciones", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         if (dni.isEmpty() || nombres.isEmpty() || apPat.isEmpty() || apMat.isEmpty()) {
             Toast.makeText(this, "Completa tus datos personales", Toast.LENGTH_SHORT).show()
             return
@@ -115,5 +134,22 @@ class RegistroActivity : AppCompatActivity() {
                     Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
                 }
             }
+    }
+    private fun mostrarTerminos(){
+        val builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("Terminos y Condiciones")
+        builder.setMessage(
+            "Al registrarte en PetHome, aceptas que tus datos personales " +
+            "serán utilizados unicamente para el funcionamiento de la aplicación. " +
+            "El uso de la app implica la aceptación de esas condiciones."
+        )
+        builder.setPositiveButton("Aceptar") { dialog, _ ->
+            cbTerminos.isChecked = true
+            dialog.dismiss()
+        }
+        builder.setNegativeButton("Cerrar") { dialog, _ ->
+            dialog.dismiss()
+        }
+        builder.show()
     }
 }

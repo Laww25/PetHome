@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    private lateinit var etCorreo: EditText
-    private lateinit var etPassword: EditText
+    private lateinit var etCorreo: com.google.android.material.textfield.TextInputEditText
+    private lateinit var etPassword: com.google.android.material.textfield.TextInputEditText
     private lateinit var btnIngresar: Button
     private lateinit var tvRegistro: TextView
 

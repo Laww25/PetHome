@@ -157,4 +157,15 @@ class InicioActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+    fun navegarA(itemId: Int) {
+        nvMenu.setCheckedItem(itemId)
+        dlayMenu.closeDrawer(GravityCompat.START)
+        when (itemId) {
+            R.id.itMascotas -> replaceFragment(MascotasFragment())
+            R.id.itHistorial -> replaceFragment(HistorialFragment())
+            R.id.itSeguimiento -> replaceFragment(SeguimientoFragment())
+
+        }
+    }
 }

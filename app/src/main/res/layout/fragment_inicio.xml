@@ -1,14 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="24dp">
+    android:layout_height="wrap_content"
+    android:background="#F7F5FF">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inicio (Fragment)"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-</FrameLayout>
+        <!-- SALUDO -->
+        <TextView
+            android:id="@+id/tvSaludo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Hola!"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#333A4E"
+            android:layout_marginBottom="4dp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido de vuelta"
+            android:textSize="13sp"
+            android:textColor="#888780"
+            android:layout_marginTop="20dp" />
+
+        <!-- CONTAR MASCOTAS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#EEEDFE"
+                android:padding="14dp"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/tvContadorMascotas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="#534AB7" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mascotas"
+                    android:textSize="11sp"
+                    android:textColor="#7F77DD"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#E1F5EE"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PetHome"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="#0F6E56" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tu app de mascotas"
+                    android:textSize="11sp"
+                    android:textColor="#1D9E75"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ACCESOS RAPIDOS -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accesos rápidos"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#333A4E"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/btnIrMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🐾  Ver mis mascotas"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:textColor="#534AB7"
+            android:background="#EEEDFE"
+            android:padding="14dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/btnIrHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋 Ver historial"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#0F6E56"
+            android:background="#E1F5EE"
+            android:padding="14dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/btnIrSeguimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 Seguimiento GPS"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#993C1D"
+            android:background="#FAECE7"
+            android:padding="14dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
